@@ -33,5 +33,21 @@ def get_random_movies_data():
 
         movies_data.append(movie_dict)
     return movies_data
+
+def display_movies():
+    import streamlit as st
+    col1,col2=st.columns(2)
+    random_movies=get_random_movies_data()
+    poster_width = 300  
+
+    for idx, movie in enumerate(random_movies):
+        with col1 if idx % 2 == 0 else col2:
+            st.image(movie['poster'], caption=movie['name'], width=poster_width)
+            with st.expander("More Info"):
+                st.write(f"Type: {movie['type']}")
+                st.write(f"Release Year: {movie['release year']}")
     
+def switch_page():
+     import streamlit as st
+     st.write("Hello world")
 
