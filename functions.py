@@ -1,3 +1,5 @@
+from key import key
+
 # function that returns random movies to display on the welcome page
 def get_random_movies_data():
     import requests
@@ -6,7 +8,7 @@ def get_random_movies_data():
     url = "https://moviesdatabase.p.rapidapi.com/titles/random"
     querystring = {"startYear": "2022", "endYear": "2023", "list": "most_pop_movies"}
     headers = {
-        "X-RapidAPI-Key": "62b620fdabmsh9245da47d990846p1f3c48jsn3e6be629f08b",
+        "X-RapidAPI-Key": key.api_key,
         "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
     }
 
